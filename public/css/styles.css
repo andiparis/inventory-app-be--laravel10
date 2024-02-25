@@ -1,0 +1,8 @@
+.form-auth .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-auth input {
+    margin-bottom: -1px;
+    border-radius: 0;
+}
