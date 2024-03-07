@@ -34,6 +34,7 @@ class ItemController extends Controller
         'item_code'     => 'required|max:10|unique:items',
         'name'          => 'required|max:75',
         'price'         => 'required|numeric',
+        'min_stock'     => 'required|numeric|min:1',
         'description'   => 'max:255',
       ]);
 
@@ -48,6 +49,7 @@ class ItemController extends Controller
         'item_code'     => $request->item_code,
         'name'          => $request->name,
         'price'         => $request->price,
+        'min_stock'     => $request->min_stock,
         'description'   => $request->description,
       ]);
 
@@ -78,6 +80,7 @@ class ItemController extends Controller
       $validation = Validator::make($request->all(), [
         'name'          => 'required|max:75',
         'price'         => 'required|numeric',
+        'min_stock'     => 'required|numeric|min:1',
         'description'   => 'max:255',
       ]);
 
@@ -91,6 +94,7 @@ class ItemController extends Controller
       $item->update([
         'name'          => $request->name,
         'price'         => $request->price,
+        'min_stock'     => $request->min_stock,
         'description'   => $request->description,
       ]);
 
